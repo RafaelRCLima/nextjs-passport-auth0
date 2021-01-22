@@ -6,7 +6,9 @@ If you need more details I recommend you to take a look on this example https://
 You will need to set these settings on .env:
 
 AUTH0_DOMAIN=
+
 AUTH0_CLIENT_ID=
+
 AUTH0_CLIENT_SECRET=
 
 Then just 'npm i'/'yarn' and 'npm run dev'/'yarn start'
