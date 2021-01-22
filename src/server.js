@@ -40,6 +40,7 @@ app.prepare().then(() => {
       callbackURL: process.env.AUTH0_CALLBACK_URL_PASS
     },
     function(accessToken, refreshToken, extraParams, profile, done) {
+      profile.accessToken = accessToken;
       return done(null, profile);
     }
   );
