@@ -10,4 +10,14 @@ AUTH0_CLIENT_ID=
 AUTH0_CLIENT_SECRET=
 ```
 
-Then just 'npm i'/'yarn' and 'npm run dev'/'yarn start'
+Then just run
+
+```npm i```
+or 
+```yarn```
+
+To run the application
+
+```npm run dev```
+or
+```yarn start```
