@@ -32,6 +32,8 @@ class MyApp extends App {
       user: this.state.user,
     };
 
+    console.log(JSON.stringify(this.state.user))
+
     return (
       <NextContainer>
         <Head>

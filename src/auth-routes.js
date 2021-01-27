@@ -11,11 +11,9 @@ router.get("/callback", (req, res, next) => {
   passport.authenticate("auth0",  (err, user) => {
     if (err) return next(err);
     if (!user) {
-      console.log('Não tem usuário')
       return res.redirect("/login")
     };
     req.logIn(user, (err) => {
-      console.log(JSON.stringify(user.displayName))
       if (err) return next(err);
       res.redirect("/");
     });
@@ -25,8 +23,8 @@ router.get("/callback", (req, res, next) => {
 router.get("/logout", (req, res) => {
   req.logout();
 
-  const {AUTH0_DOMAIN_PASS, AUTH0_CLIENT_ID_PASS, BASE_URL_PASS} = process.env;
-  res.redirect(`https://${AUTH0_DOMAIN_PASS}/logout?client_id=${AUTH0_CLIENT_ID_PASS}&returnTo=${BASE_URL_PASS}`);
+  const {AUTH0_DOMAIN, AUTH0_CLIENT_ID, BASE_URL} = process.env;
+  res.redirect(`https://${AUTH0_DOMAIN}/logout?client_id=${AUTH0_CLIENT_ID}&returnTo=${BASE_URL}`);
 });
 
 module.exports = router;
